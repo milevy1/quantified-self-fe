@@ -1,40 +1,51 @@
-# Quantified Self Front-end
+# Quantified Self
 
 ## Initial Setup
+Package
+```shell
+npm install
+npm audit fix
+```
+Knex:   The primary target environment for Knex is Node.js, you will need to install the knex library, and then install the database library: pg for PostgreSQL.
+  ```shell
+  npm init --yes
+  npm install knex -g
+  npm install knex --save
+  npm install express -g
+  npm install express --save
+  npm install pg --save
+  npm install body-parser --save
 
-1. Clone this starter kit repository and rename the repository to `quantified-self-fe` in one command
+  knex init
+```
+setup pg database
+```pg
+psql
+CREATE DATABASE tracker_development;
+CREATE DATABASE tracker_production;
+CREATE DATABASE tracker_staging;
+```
+to access one of the databases:
+```pg
+psql tracker_development
+\dt
+```
+  ```
+Make a migration
+  ```shell
+  knex migrate:make initial
+  ```
 
   ```shell
-  git clone git@github.com:turingschool-examples/qs-fe-starter-kit.git quantified-self-fe
-  ```
-2. Change into the `quantified-self-fe` directory
-
-3. Remove the default remote (origin)
-
-  ```shell
-  git remote rm origin
   ```
 
-4. Create a new repository on GitHub named `quantified-self-fe`
-
-5. Add your new repository remote - **your remote URL and user name will be different in the command below**
-
-  ```shell
-  git remote add origin git@github.com:<YOUR GITHUB NAME>/quantified-self-fe.git
-  ```
-
-6. Install the dependencies of the starter kit
 
   ```shell
   npm install
   ```
 
-7. Add, commit, and push up to your repository
 
   ```shell
-  git add .
-  git commit -m "Initial commit using starter kit"
-  git push origin master
   ```
 
 ## Running the Server Locally
@@ -76,4 +87,3 @@ Be sure to `npm run build` and commit before each push to master. A few seconds 
 * [Express](https://expressjs.com/)
 * [Mocha](https://mochajs.org/)
 * [Chai](https://chaijs.com/)
-
