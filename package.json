@@ -5,7 +5,8 @@
   "main": "index.js",
   "proxy": "https://localhost:3000/",
   "scripts": {
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p",
     "build": "./node_modules/webpack/bin/webpack.js",
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel-core/register"
   },
@@ -36,7 +37,7 @@
     "selenium-webdriver": "^3.0.1",
     "style-loader": "^0.13.1",
     "webdriverjs": "^1.7.5",
-    "webpack": "^1.14.0",
+    "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.2"
   }
 }
